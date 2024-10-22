@@ -228,13 +228,13 @@ type
   ReferenceClientCapabilities* = ref object of RootObj
     dynamicRegistration*: Option[bool]
 
-  DocumentHighlightClientCapabilies* = ref object of RootObj
+  DocumentHighlightClientCapabilities* = ref object of RootObj
     dynamicRegistration*: Option[bool]
 
   TagSupportCapability* = ref object of RootObj
     valueSet*: seq[SymbolTag]
 
-  DocumentSymbolClientCapabilies* = ref object of RootObj
+  DocumentSymbolClientCapabilities* = ref object of RootObj
     dynamicRegistration*: Option[bool]
     symbolKind*: Option[SymbolKindCapability]
     hierarchicalDocumentSymbolSupport*: Option[bool]
@@ -342,8 +342,8 @@ type
     typeDefinition*: Option[TypeDefinitionClientCapabilities]
     implementation*: Option[ImplementationClientCapabilities]
     references*: Option[ReferenceClientCapabilities]
-    documentHighlight*: Option[DocumentHighlightClientCapabilies]
-    documentSymbol*: Option[DocumentSymbolClientCapabilies]
+    documentHighlight*: Option[DocumentHighlightClientCapabilities]
+    documentSymbol*: Option[DocumentSymbolClientCapabilities]
     codeAction*: Option[CodeActionClientCapabilities]
     codeLens*: Option[CodeLensClientClientCapabilities]
     documentLink*: Option[DocumentLinkClientCapabilities]

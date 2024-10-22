@@ -586,7 +586,7 @@ proc initInitializeParams*(
           codeLens: some(CodeLensClientClientCapabilities(
             dynamicRegistration: some(true)
           )),
-          documentHighlight: some(DocumentHighlightClientCapabilies(
+          documentHighlight: some(DocumentHighlightClientCapabilities(
             dynamicRegistration: some(true)
           )),
           documentLink: some(DocumentLinkClientCapabilities(

@@ -67,7 +67,7 @@ multipleStatusLine = false
 merge = true
 mode = false
 filename = false
-chanedMark = false
+changedMark = false
 directory = false
 gitChangedLines = false
 gitBranchName = false
@@ -546,7 +546,7 @@ suite "settings: Parse configuration file":
     check settings.statusLine.merge
     check not settings.statusLine.mode
     check not settings.statusLine.filename
-    check not settings.statusLine.chanedMark
+    check not settings.statusLine.changedMark
     check not settings.statusLine.directory
     check not settings.statusLine.gitChangedLines
     check not settings.statusLine.gitBranchName

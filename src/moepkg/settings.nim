@@ -160,7 +160,7 @@ type
     merge*: bool
     mode*: bool
     filename*: bool
-    chanedMark*: bool
+    changedMark*: bool
     directory*: bool
     multipleStatusLine*: bool
     gitChangedLines*: bool
@@ -475,7 +475,7 @@ proc initStatusLineSettings*(): StatusLineSettings =
   result.enable = true
   result.mode = true
   result.filename = true
-  result.chanedMark = true
+  result.changedMark = true
   result.directory = true
   result.multipleStatusLine = true
   result.gitChangedLines = true
@@ -1441,8 +1441,8 @@ proc parseStatusLineTable(
     if statusLineConfigs.contains("filename"):
       s.statusLine.filename = statusLineConfigs["filename"].getBool
 
-    if statusLineConfigs.contains("chanedMark"):
-      s.statusLine.chanedMark = statusLineConfigs["chanedMark"].getBool
+    if statusLineConfigs.contains("changedMark"):
+      s.statusLine.changedMark = statusLineConfigs["changedMark"].getBool
 
     if statusLineConfigs.contains("directory"):
       s.statusLine.directory = statusLineConfigs["directory"].getBool
@@ -2288,7 +2288,7 @@ proc validateStatusLineTable(table: TomlValueRef): Option[InvalidItem] =
          "merge",
          "mode",
          "filename",
-         "chanedMark",
+         "changedMark",
          "directory",
          "gitChangedLines",
          "gitBranchName",
@@ -3024,7 +3024,7 @@ proc genTomlConfigStr*(settings: EditorSettings): string =
   result.addLine fmt "merge = {$settings.statusLine.merge }"
   result.addLine fmt "mode = {$settings.statusLine.mode }"
   result.addLine fmt "filename = {$settings.statusLine.filename}"
-  result.addLine fmt "chanedMark = {$settings.statusLine.chanedMark}"
+  result.addLine fmt "changedMark = {$settings.statusLine.changedMark}"
   result.addLine fmt "directory = {$settings.statusLine.directory}"
   result.addLine fmt "gitChangedLines = {$settings.statusLine.gitChangedLines}"
   result.addLine fmt "gitBranchName = {$settings.statusLine.gitBranchName}"

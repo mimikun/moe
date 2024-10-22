@@ -66,7 +66,7 @@ type
     merge
     mode
     filename
-    chanedMark
+    changedMark
     line
     column
     encoding
@@ -352,8 +352,8 @@ proc getStatusLineTableSettingValues(
           currentVal = settings.mode
         of "filename":
           currentVal = settings.filename
-        of "chanedMark":
-          currentVal = settings.chanedMark
+        of "changedMark":
+          currentVal = settings.changedMark
         of "directory":
           currentVal = settings.directory
         of "gitChangedLines":
@@ -817,8 +817,8 @@ proc changeStatusLineTableSetting(
         settings.mode = parseBool(settingVal)
       of "filename":
         settings.filename = parseBool(settingVal)
-      of "chanedMark":
-        settings.chanedMark = parseBool(settingVal)
+      of "changedMark":
+        settings.changedMark = parseBool(settingVal)
       of "directory":
         settings.directory = parseBool(settingVal)
       of "gitChangedLines":
@@ -1191,7 +1191,7 @@ proc getSettingType(table, name: string): SettingType =
          "merge",
          "mode",
          "filename",
-         "chanedMark",
+         "changedMark",
          "line",
          "column",
          "encoding",
@@ -1879,8 +1879,8 @@ proc initStatusLineTableBuffer(settings: StatusLineSettings): seq[Runes] =
         result.add(ru nameStr & space & $settings.mode)
       of "filename":
         result.add(ru nameStr & space & $settings.filename)
-      of "chanedMark":
-        result.add(ru nameStr & space & $settings.chanedMark)
+      of "changedMark":
+        result.add(ru nameStr & space & $settings.changedMark)
       of "directory":
         result.add(ru nameStr & space & $settings.directory)
       of "gitChangedLines":

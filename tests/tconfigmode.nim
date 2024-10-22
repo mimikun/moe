@@ -115,7 +115,7 @@ suite "Config mode: Init buffer":
       "  merge                    false",
       "  mode                     true",
       "  filename                 true",
-      "  chanedMark               true",
+      "  changedMark               true",
       "  directory                true",
       "  gitChangedLines          true",
       "  gitBranchName            true",
@@ -653,13 +653,13 @@ suite "Config mode: Get StatusLine table setting values":
 
     checkBoolSettingValue(default, values)
 
-  test "Get chanedMark values":
+  test "Get changedMark values":
     var status = initEditorStatus()
     let statusLineSettings = status.settings.statusLine
 
-    const Name = "chanedMark"
+    const Name = "changedMark"
     let
-      default = statusLineSettings.chanedMark
+      default = statusLineSettings.changedMark
       values = statusLineSettings.getStatusLineTableSettingValues(Name)
 
     checkBoolSettingValue(default, values)
@@ -1313,8 +1313,8 @@ suite "Config mode: Get Git table setting values":
     const Name = "test"
     check s.getGitTableSettingsValues(Name).len == 0
 
-suite "Config mode: Chaging Standard table settings":
-  test "Chaging number":
+suite "Config mode: Changing Standard table settings":
+  test "Changing number":
     var settings = initEditorSettings()
 
     let val = not settings.view.lineNumber
@@ -1322,7 +1322,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.view.lineNumber
 
-  test "Chaging currentNumber":
+  test "Changing currentNumber":
     var settings = initEditorSettings()
 
     let val = not settings.view.currentLineNumber
@@ -1330,7 +1330,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.view.currentLineNumber
 
-  test "Chaging cursorLine":
+  test "Changing cursorLine":
     var settings = initEditorSettings()
 
     let val = not settings.view.cursorLine
@@ -1338,7 +1338,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.view.cursorLine
 
-  test "Chaging statusLine":
+  test "Changing statusLine":
     var settings = initEditorSettings()
 
     let val = not settings.statusLine.enable
@@ -1346,7 +1346,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.statusLine.enable
 
-  test "Chaging tabLine":
+  test "Changing tabLine":
     var settings = initEditorSettings()
 
     let val = not settings.tabLine.enable
@@ -1354,7 +1354,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.tabLine.enable
 
-  test "Chaging syntax":
+  test "Changing syntax":
     var settings = initEditorSettings()
 
     let val = not settings.standard.syntax
@@ -1362,7 +1362,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.standard.syntax
 
-  test "Chaging indentationLines":
+  test "Changing indentationLines":
     var settings = initEditorSettings()
 
     let val = not settings.view.indentationLines
@@ -1370,7 +1370,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.view.indentationLines
 
-  test "Chaging autoCloseParen":
+  test "Changing autoCloseParen":
     var settings = initEditorSettings()
 
     let val = not settings.standard.autoCloseParen
@@ -1378,7 +1378,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.standard.autoCloseParen
 
-  test "Chaging autoIndent":
+  test "Changing autoIndent":
     var settings = initEditorSettings()
 
     let val = not settings.standard.autoIndent
@@ -1386,7 +1386,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.standard.autoIndent
 
-  test "Chaging ignorecase":
+  test "Changing ignorecase":
     var settings = initEditorSettings()
 
     let val = not settings.standard.ignorecase
@@ -1394,7 +1394,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.standard.ignorecase
 
-  test "Chaging smartcase":
+  test "Changing smartcase":
     var settings = initEditorSettings()
 
     let val = not settings.standard.smartcase
@@ -1402,7 +1402,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.standard.smartcase
 
-  test "Chaging disableChangeCursor":
+  test "Changing disableChangeCursor":
     var settings = initEditorSettings()
 
     let val = not settings.standard.disableChangeCursor
@@ -1410,7 +1410,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.standard.disableChangeCursor
 
-  test "Chaging defaultCursor":
+  test "Changing defaultCursor":
     var settings = initEditorSettings()
 
     let val = "noneBlinkIbeam"
@@ -1418,7 +1418,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check CursorType.noneBlinkIbeam == settings.standard.defaultCursor
 
-  test "Chaging normalModeCursor":
+  test "Changing normalModeCursor":
     var settings = initEditorSettings()
 
     let val = "noneBlinkIbeam"
@@ -1426,7 +1426,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check CursorType.noneBlinkIbeam == settings.standard.normalModeCursor
 
-  test "Chaging insertModeCursor":
+  test "Changing insertModeCursor":
     var settings = initEditorSettings()
 
     let val = "noneBlinkIbeam"
@@ -1434,7 +1434,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check CursorType.noneBlinkIbeam == settings.standard.insertModeCursor
 
-  test "Chaging liveReloadOfConf":
+  test "Changing liveReloadOfConf":
     var settings = initEditorSettings()
 
     let val = not settings.standard.liveReloadOfConf
@@ -1442,7 +1442,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.standard.liveReloadOfConf
 
-  test "Chaging incrementalSearch":
+  test "Changing incrementalSearch":
     var settings = initEditorSettings()
 
     let val = not settings.standard.incrementalSearch
@@ -1450,7 +1450,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.standard.incrementalSearch
 
-  test "Chaging popupWindowInExmode":
+  test "Changing popupWindowInExmode":
     var settings = initEditorSettings()
 
     let val = not settings.standard.popupWindowInExmode
@@ -1458,7 +1458,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.standard.popupWindowInExmode
 
-  test "Chaging autoDeleteParen":
+  test "Changing autoDeleteParen":
     var settings = initEditorSettings()
 
     let val = not settings.standard.autoDeleteParen
@@ -1466,7 +1466,7 @@ suite "Config mode: Chaging Standard table settings":
 
     check val == settings.standard.autoDeleteParen
 
-  test "Chaging colorMode":
+  test "Changing colorMode":
     var settings = initEditorSettings()
 
     settings.standard.colorMode = ColorMode.c24bit
@@ -1497,8 +1497,8 @@ suite "Config mode: Chaging Standard table settings":
 
     check beforeSettings == settings
 
-suite "Config mode: Chaging ClipBoard table settings":
-  test "Chaging enable":
+suite "Config mode: Changing ClipBoard table settings":
+  test "Changing enable":
     var
       settings = initEditorSettings()
       clipboardSettings = settings.clipboard
@@ -1528,8 +1528,8 @@ suite "Config mode: Chaging ClipBoard table settings":
 
     check beforeSettings == clipboardSettings
 
-suite "Config mode: Chaging BuildOnSave table settings":
-  test "Chaging enable":
+suite "Config mode: Changing BuildOnSave table settings":
+  test "Changing enable":
     var
       settings = initEditorSettings()
       buildOnSaveSettings = settings.buildOnSave
@@ -1549,8 +1549,8 @@ suite "Config mode: Chaging BuildOnSave table settings":
 
     check beforeSettings == buildOnSaveSettings
 
-suite "Config mode: Chaging TabLine table settings":
-  test "Chaging allBuffer":
+suite "Config mode: Changing TabLine table settings":
+  test "Changing allBuffer":
 
     var
       settings = initEditorSettings()
@@ -1571,8 +1571,8 @@ suite "Config mode: Chaging TabLine table settings":
 
     check beforeSettings == tablineSettings
 
-suite "Config mode: Chaging StatusLine table settings":
-  test "Chaging ":
+suite "Config mode: Changing StatusLine table settings":
+  test "Changing ":
     var
       settings = initEditorSettings()
       statusLineSettings = settings.statusLine
@@ -1582,7 +1582,7 @@ suite "Config mode: Chaging StatusLine table settings":
 
     check val == statusLineSettings.multipleStatusLine
 
-  test "Chaging merge":
+  test "Changing merge":
     var
       settings = initEditorSettings()
       statusLineSettings = settings.statusLine
@@ -1592,7 +1592,7 @@ suite "Config mode: Chaging StatusLine table settings":
 
     check val == statusLineSettings.merge
 
-  test "Chaging mode":
+  test "Changing mode":
     var
       settings = initEditorSettings()
       statusLineSettings = settings.statusLine
@@ -1602,7 +1602,7 @@ suite "Config mode: Chaging StatusLine table settings":
 
     check val == statusLineSettings.mode
 
-  test "Chaging fileName":
+  test "Changing fileName":
     var
       settings = initEditorSettings()
       statusLineSettings = settings.statusLine
@@ -1612,17 +1612,17 @@ suite "Config mode: Chaging StatusLine table settings":
 
     check val == statusLineSettings.fileName
 
-  test "Chaging chanedMark":
+  test "Changing changedMark":
     var
       settings = initEditorSettings()
       statusLineSettings = settings.statusLine
 
-    let val = not statusLineSettings.chanedMark
-    statusLineSettings.changeStatusLineTableSetting("chanedMark", $val)
+    let val = not statusLineSettings.changedMark
+    statusLineSettings.changeStatusLineTableSetting("changedMark", $val)
 
-    check val == statusLineSettings.chanedMark
+    check val == statusLineSettings.changedMark
 
-  test "Chaging directory":
+  test "Changing directory":
     var
       settings = initEditorSettings()
       statusLineSettings = settings.statusLine
@@ -1632,7 +1632,7 @@ suite "Config mode: Chaging StatusLine table settings":
 
     check val == statusLineSettings.directory
 
-  test "Chaging gitChangedLines":
+  test "Changing gitChangedLines":
     var
       settings = initEditorSettings()
       statusLineSettings = settings.statusLine
@@ -1642,7 +1642,7 @@ suite "Config mode: Chaging StatusLine table settings":
 
     check val == statusLineSettings.gitChangedLines
 
-  test "Chaging gitBranchName":
+  test "Changing gitBranchName":
     var
       settings = initEditorSettings()
       statusLineSettings = settings.statusLine
@@ -1652,7 +1652,7 @@ suite "Config mode: Chaging StatusLine table settings":
 
     check val == statusLineSettings.gitBranchName
 
-  test "Chaging showGitInactive":
+  test "Changing showGitInactive":
     var
       settings = initEditorSettings()
       statusLineSettings = settings.statusLine
@@ -1662,7 +1662,7 @@ suite "Config mode: Chaging StatusLine table settings":
 
     check val == statusLineSettings.showGitInactive
 
-  test "Chaging showModeInactive":
+  test "Changing showModeInactive":
     var
       settings = initEditorSettings()
       statusLineSettings = settings.statusLine
@@ -1682,8 +1682,8 @@ suite "Config mode: Chaging StatusLine table settings":
 
     check beforeSettings == statusLineSettings
 
-suite "Config mode: Chaging Highlight table settings":
-  test "Chaging currentLine":
+suite "Config mode: Changing Highlight table settings":
+  test "Changing currentLine":
     var settings = initEditorSettings()
 
     let val = not settings.view.highlightCurrentLine
@@ -1691,7 +1691,7 @@ suite "Config mode: Chaging Highlight table settings":
 
     check val == settings.view.highlightCurrentLine
 
-  test "Chaging fullWidthSpace":
+  test "Changing fullWidthSpace":
     var settings = initEditorSettings()
 
     let val = not settings.highlight.fullWidthSpace
@@ -1699,7 +1699,7 @@ suite "Config mode: Chaging Highlight table settings":
 
     check val == settings.highlight.fullWidthSpace
 
-  test "Chaging trailingSpaces":
+  test "Changing trailingSpaces":
     var settings = initEditorSettings()
 
     let val = not settings.highlight.trailingSpaces
@@ -1707,7 +1707,7 @@ suite "Config mode: Chaging Highlight table settings":
 
     check val == settings.highlight.trailingSpaces
 
-  test "Chaging replaceText":
+  test "Changing replaceText":
     var settings = initEditorSettings()
 
     let val = not settings.highlight.replaceText
@@ -1715,7 +1715,7 @@ suite "Config mode: Chaging Highlight table settings":
 
     check val == settings.highlight.replaceText
 
-  test "Chaging pairOfParen":
+  test "Changing pairOfParen":
     var settings = initEditorSettings()
 
     let val = not settings.highlight.pairOfParen
@@ -1723,7 +1723,7 @@ suite "Config mode: Chaging Highlight table settings":
 
     check val == settings.highlight.pairOfParen
 
-  test "Chaging currentWord":
+  test "Changing currentWord":
     var settings = initEditorSettings()
 
     let val = not settings.highlight.currentWord
@@ -1739,8 +1739,8 @@ suite "Config mode: Chaging Highlight table settings":
 
     check beforeSettings == settings
 
-suite "Config mode: Chaging AutoBackup table settings":
-  test "Chaging enable":
+suite "Config mode: Changing AutoBackup table settings":
+  test "Changing enable":
     var
       settings = initEditorSettings()
       autoBackupSettings = settings.autoBackup
@@ -1760,8 +1760,8 @@ suite "Config mode: Chaging AutoBackup table settings":
 
     check beforeSettings == autoBackupSettings
 
-suite "Config mode: Chaging QuickRun table settings":
-  test "Chaging saveBufferWhenQuickRun":
+suite "Config mode: Changing QuickRun table settings":
+  test "Changing saveBufferWhenQuickRun":
     var
       settings = initEditorSettings()
       quickRunSettings = settings.quickRun
@@ -1781,8 +1781,8 @@ suite "Config mode: Chaging QuickRun table settings":
 
     check beforeSettings == quickRunSettings
 
-suite "Config mode: Chaging Notification table settings":
-  test "Chaging screenNotifications":
+suite "Config mode: Changing Notification table settings":
+  test "Changing screenNotifications":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1792,7 +1792,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.screenNotifications
 
-  test "Chaging logNotifications":
+  test "Changing logNotifications":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1802,7 +1802,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.logNotifications
 
-  test "Chaging autoBackupScreenNotify":
+  test "Changing autoBackupScreenNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1812,7 +1812,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.autoBackupScreenNotify
 
-  test "Chaging autoBackupLogNotify":
+  test "Changing autoBackupLogNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1822,7 +1822,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.autoBackupLogNotify
 
-  test "Chaging autoSaveScreenNotify":
+  test "Changing autoSaveScreenNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1832,7 +1832,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.autoSaveScreenNotify
 
-  test "Chaging autoSaveLogNotify":
+  test "Changing autoSaveLogNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1842,7 +1842,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.autoSaveLogNotify
 
-  test "Chaging yankScreenNotify":
+  test "Changing yankScreenNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1852,7 +1852,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.yankScreenNotify
 
-  test "Chaging yankLogNotify":
+  test "Changing yankLogNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1862,7 +1862,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.yankLogNotify
 
-  test "Chaging deleteScreenNotify":
+  test "Changing deleteScreenNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1872,7 +1872,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.deleteScreenNotify
 
-  test "Chaging deleteLogNotify":
+  test "Changing deleteLogNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1882,7 +1882,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.deleteLogNotify
 
-  test "Chaging saveScreenNotify":
+  test "Changing saveScreenNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1892,7 +1892,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.saveScreenNotify
 
-  test "Chaging saveLogNotify":
+  test "Changing saveLogNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1902,7 +1902,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.saveLogNotify
 
-  test "Chaging quickRunScreenNotify":
+  test "Changing quickRunScreenNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1912,7 +1912,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.quickRunScreenNotify
 
-  test "Chaging quickRunLogNotify":
+  test "Changing quickRunLogNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1922,7 +1922,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.quickRunLogNotify
 
-  test "Chaging buildOnSaveScreenNotify":
+  test "Changing buildOnSaveScreenNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1932,7 +1932,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.buildOnSaveScreenNotify
 
-  test "Chaging buildOnSaveLogNotify":
+  test "Changing buildOnSaveLogNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1942,7 +1942,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.buildOnSaveLogNotify
 
-  test "Chaging filerScreenNotify":
+  test "Changing filerScreenNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1952,7 +1952,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.filerScreenNotify
 
-  test "Chaging filerLogNotify":
+  test "Changing filerLogNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1962,7 +1962,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.filerLogNotify
 
-  test "Chaging restoreScreenNotify":
+  test "Changing restoreScreenNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1972,7 +1972,7 @@ suite "Config mode: Chaging Notification table settings":
 
     check val == notificationSettings.restoreScreenNotify
 
-  test "Chaging restoreLogNotify":
+  test "Changing restoreLogNotify":
     var
       settings = initEditorSettings()
       notificationSettings = settings.notification
@@ -1992,8 +1992,8 @@ suite "Config mode: Chaging Notification table settings":
 
     check beforeSettings == notificationSettings
 
-suite "Config mode: Chaging Filer table settings":
-  test "Chaging showIcons":
+suite "Config mode: Changing Filer table settings":
+  test "Changing showIcons":
     var
       settings = initEditorSettings()
       filerSettings = settings.filer
@@ -2013,8 +2013,8 @@ suite "Config mode: Chaging Filer table settings":
 
     check beforeSettings == filerSettings
 
-suite "Config mode: Chaging Autocomplete table settings":
-  test "Chaging enable":
+suite "Config mode: Changing Autocomplete table settings":
+  test "Changing enable":
     var
       settings = initEditorSettings()
       autocompleteSettings = settings.autocomplete
@@ -2034,8 +2034,8 @@ suite "Config mode: Chaging Autocomplete table settings":
 
     check beforeSettings == autocompleteSettings
 
-suite "Config mode: Chaging Persist table settings":
-  test "Chaging exCommand":
+suite "Config mode: Changing Persist table settings":
+  test "Changing exCommand":
     var
       settings = initEditorSettings()
       persistSettings = settings.persist
@@ -2045,7 +2045,7 @@ suite "Config mode: Chaging Persist table settings":
 
     check val == persistSettings.exCommand
 
-  test "Chaging exCommandHistoryLimit":
+  test "Changing exCommandHistoryLimit":
     var
       settings = initEditorSettings()
       persistSettings = settings.persist
@@ -2055,7 +2055,7 @@ suite "Config mode: Chaging Persist table settings":
 
     check val == persistSettings.exCommandHistoryLimit
 
-  test "Chaging search":
+  test "Changing search":
     var
       settings = initEditorSettings()
       persistSettings = settings.persist
@@ -2065,7 +2065,7 @@ suite "Config mode: Chaging Persist table settings":
 
     check val == persistSettings.search
 
-  test "Chaging searchHistoryLimit":
+  test "Changing searchHistoryLimit":
     var
       settings = initEditorSettings()
       persistSettings = settings.persist
@@ -2075,7 +2075,7 @@ suite "Config mode: Chaging Persist table settings":
 
     check val == persistSettings.searchHistoryLimit
 
-  test "Chaging cursorPosition":
+  test "Changing cursorPosition":
     var
       settings = initEditorSettings()
       persistSettings = settings.persist
@@ -2085,7 +2085,7 @@ suite "Config mode: Chaging Persist table settings":
 
     check val == persistSettings.search
 
-suite "Config mode: Change Git table sttings":
+suite "Config mode: Change Git table settings":
   test "showChangedLine":
     var s = initGitSettings()
 

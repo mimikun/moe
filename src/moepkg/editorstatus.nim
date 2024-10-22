@@ -290,7 +290,7 @@ proc exitEditor*(status: EditorStatus) =
     saveLastCursorPosition(status.lastPosition)
 
   if dirExists(gitDiffTmpDir()):
-    # Cleanup temporary files fot git diff.
+    # Cleanup temporary files for git diff.
     removeDir(gitDiffTmpDir())
 
   exitUi()
@@ -981,7 +981,7 @@ proc update*(status: var EditorStatus) =
     currentBufStatus.updateSelectedArea(currentMainWindowNode)
 
   # Set editor Color Pair for current line highlight.
-  # New color pairs are set to number larger than the maximum value of EditorColorPiarIndex.
+  # New color pairs are set to number larger than the maximum value of EditorColorPairIndex.
   var currentLineColorPair: int = ord(EditorColorPairIndex.high) + 1
 
   var queue = initHeapQueue[WindowNode]()

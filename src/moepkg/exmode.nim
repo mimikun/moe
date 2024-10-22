@@ -1020,7 +1020,7 @@ proc listAllBufferCommand(status: var EditorStatus) =
   let
     useStatusLine = if status.settings.statusLine.enable: 1 else: 0
     enable = if status.settings.tabLine.enable: 1 else: 0
-    swapCurrentLineNumStting = status.settings.view.currentLineNumber
+    swapCurrentLineNumSetting = status.settings.view.currentLineNumber
 
   status.settings.view.currentLineNumber = false
   currentMainWindowNode.view = currentBufStatus.buffer.initEditorView(
@@ -1047,7 +1047,7 @@ proc listAllBufferCommand(status: var EditorStatus) =
     if isResizeKey(key.get): status.resize
     else: break
 
-  status.settings.view.currentLineNumber = swapCurrentLineNumStting
+  status.settings.view.currentLineNumber = swapCurrentLineNumSetting
   status.changeCurrentBuffer(swapCurrentBufferIndex)
   status.deleteBufferStatusCommand(status.bufStatus.high)
   status.commandLine.clear

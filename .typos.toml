@@ -1,0 +1,24 @@
+[default.extend-words]
+# Intentional?
+Informations = "Informations"
+Sist="Sist"
+
+# tests/tinsertmode.nim:69:27
+ba="ba"
+
+# tests/tgit.nim:45:2
+mport = "mport"
+
+# src/moepkg/syntax/syntaxnim.nim:121:44
+tou = "tou"
+
+# src/moepkg/unicodeext.nim:42:31
+Nd = "Nd"
+
+# src/moepkg/filermodeutils.nim:358:25
+odf ="odf"
+
+[files]
+extend-exclude = [
+  "changelog.d",
+]

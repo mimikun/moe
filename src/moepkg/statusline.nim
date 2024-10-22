@@ -302,7 +302,7 @@ proc addNormalModeInfo(
     if settings.statusLine.filename:
       buffer.add displayPath(bufStatus)
 
-    if bufStatus.countChange > 0 and settings.statusLine.chanedMark:
+    if bufStatus.countChange > 0 and settings.statusLine.changedMark:
       const ChangedMark = ru"[+]"
       buffer.add ru" " & ChangedMark
 
